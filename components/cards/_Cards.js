@@ -22,6 +22,7 @@ export const Card = ({
   const AsideCard = ({ children }) => (
     <Box 
       bg={bgColor}
+      mt={[4, 4, 4, 0]}
       width={[
         '100%', // 48em-62em
         '100%', // 30em-48em

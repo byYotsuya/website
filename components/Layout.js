@@ -13,7 +13,8 @@ export default function Layout({children, metadata={}, type="list"}) {
       padding="10"
       rounded="10"
       width={[
-        '25%', // 48em-62em
+        '100%', // 48em-62em
+        '100%', // 30em-48em
         '100%', // 30em-48em
         '60%', // 62em+
       ]}
@@ -32,12 +33,12 @@ export default function Layout({children, metadata={}, type="list"}) {
         {
           isBlogTemplate
           ? (
-            <Heading as="h1" m={2} size="2xl">
+            <Heading as="h1" m={2} size="xl">
               {metadata.title}
             </Heading>
           )
           : (
-            <Heading as="h2" size="2xl" fontWeight="bold" >
+            <Heading as="h2" size="xl" fontWeight="bold" >
               <strong>{metadata.title}</strong>
             </Heading>
           )
