@@ -5,13 +5,13 @@ const matter = require("gray-matter");
 
 (async () => {
   const feed = new RSS({
-    title: "Carlos Azaustre - Desarrollo y Formación JavaScript",
+    title: "Miguel Martinez - Desarrollo y Formación JavaScript",
     description:
       "Tutoriales de Programación y desarrollo web con JavaScript, React, Node.js y más",
-    site_url: "https://carlosazaustre.es",
-    feed_url: "https://carlosazaustre.es/rss.xml",
-    webMaster: "Carlos Azaustre",
-    copyright: `2011-${new Date().getFullYear} Carlos Azaustre`,
+    site_url: "https://yotsuya.vercel.app",
+    feed_url: "https://yotsuya.vercel.app/rss.xml",
+    webMaster: "Miguel Martinez",
+    copyright: `2011-${new Date().getFullYear} Miguel `,
     language: "es",
   });
 
@@ -25,7 +25,7 @@ const matter = require("gray-matter");
       const frontmatter = matter(content);
       const item = {
         title: frontmatter.data.title,
-        url: `https://carlosazaustre.es/${file.replace(/\.mdx?/, "")}`,
+        url: `https://yotsuya.vercel.app/${file.replace(/\.mdx?/, "")}`,
         date: frontmatter.data.date,
       };
       if (frontmatter.data?.summary) {
