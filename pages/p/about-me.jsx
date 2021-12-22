@@ -6,7 +6,7 @@ export default function AboutMe() {
   return (
     <>
       <Head>
-        <title>Miguel Martínez - Web site</title>
+        <title>About me</title>
       </Head>
 
       <Header />

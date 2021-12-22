@@ -5,7 +5,8 @@ import React from 'react'
 import SearchButton from './partials/SearchButton'
 import TitleHeader from './partials/TitleHeader'
 
-export default function Header({background}) {
+      
+export default function Header({background = "#f1f5f9"}) {
 
   return (
 
@@ -13,9 +14,13 @@ export default function Header({background}) {
 
       <Container maxW="container.2xl" paddingX="5rem" paddingY="5">
         <header>
-          <Flex height="60px" alignItems="center" justifyContent="center">
+          <Flex height="40px" alignItems="center" justifyContent="center">
             <Box alignItems="flex-start" alignContent="flex-start" >
-              <TitleHeader />
+              <Link href="/">
+                <a>
+                  <TitleHeader />
+                </a>
+              </Link>
             </Box>
 
             <Spacer />

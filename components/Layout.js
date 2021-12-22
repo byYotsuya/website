@@ -8,15 +8,15 @@ export default function Layout({children, metadata={}, type="list"}) {
 
   return (
     <Box
-      height="100vh"
-      background="#f1f5f9"
+      height="100%"
+      background="#fff"
       padding="10"
       rounded="10"
       width={[
         '100%', // 48em-62em
         '100%', // 30em-48em
         '100%', // 30em-48em
-        '60%', // 62em+
+        '69%', // 62em+
       ]}
     >
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Carlos Azaustre - Desarrollo y Formación JavaScript]]></title>
+        <description><![CDATA[Tutoriales de Programación y desarrollo web con JavaScript, React, Node.js y más]]></description>
+        <link>https://carlosazaustre.es</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Wed, 22 Dec 2021 20:33:01 GMT</lastBuildDate>
+        <atom:link href="https://carlosazaustre.es/rss.xml" rel="self" type="application/rss+xml"/>
+        <copyright><![CDATA[2011-function getFullYear() { [native code] } Carlos Azaustre]]></copyright>
+        <language><![CDATA[es]]></language>
+        <webMaster><![CDATA[Carlos Azaustre]]></webMaster>
+        <item>
+            <title><![CDATA[Aprende ECMAScript 2021, todo lo nuevo de JavaScript]]></title>
+            <link>https://carlosazaustre.es/ecmascript2021</link>
+            <guid isPermaLink="true">https://carlosazaustre.es/ecmascript2021</guid>
+            <category><![CDATA[💻 Desarrollo]]></category>
+            <pubDate>Sun, 24 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
