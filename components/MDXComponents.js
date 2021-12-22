@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { IconLabel } from "./icons";
 import { Dropdown, DropdownItem } from "./Dropdown";
-import { YouTube } from "./YouTube";
-import { YouTubeBtn } from "./YouTubeBtn";
 import { Summary } from "./Summary";
 import { CustomLink } from "./CustomLink";
 import { CustomImage } from "./CustomImage";
@@ -51,8 +49,6 @@ export const MDXComponents = {
   Image,
   Summary,
   Heading,
-  YouTube,
-  YouTubeBtn,
   Dropdown,
   DropdownItem,
 };
