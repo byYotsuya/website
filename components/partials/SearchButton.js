@@ -17,10 +17,11 @@ export default function SearchButton() {
         <InputGroup>
           <InputLeftElement 
             pointerEvents="none"
-            children={<SearchIcon 
-              height="100%" color="#900099" />}
-
-          />
+            // eslint-disable-next-line react/no-children-prop
+          >
+            <SearchIcon 
+              height="100%" color="#900099" />
+          </InputLeftElement>
           <Input
             size="md"
             type="text"
