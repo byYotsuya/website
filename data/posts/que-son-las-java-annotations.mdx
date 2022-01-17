@@ -1,0 +1,155 @@
+---
+title: ¿Qué son las Java Annotations?
+date: "2019-10-24"
+banner: "/images/ecmascript6//ecmascript6-seo.jpg"
+
+tags:
+  - 💻 Desarrollo
+  - ☕ Java
+  - 🍃 Spring
+---
+
+
+Son anotaciones en forma de *“etiquetas”* que se añaden a nuestras clases, métodos, campos, variables, etc. en un programa Java
+
+### ¿Para que sirven?
+
+* Para añadir metadatos a nuestro código (programas) Java
+    
+    ¿Qué son los metadatos?
+    
+    - Un conjunto de datos que describen el contenido y/o proposito de un objeto
+* Nos permiten presindir de los archivos xlm que comunmente son utilizados.
+
+### ¿Cómo utilizar las anotaciones?
+
+* Preparar el archivo de configuracion xml para que Spring escanee nuestras clases
+* Agregar las anotaciones a nuestras clases en Java
+* Solicitar el Bean al contenedor
+    
+Asumiendo que tu paquete es io.yotsuya.movies tienes que poner esta etiqueta en tu archivo XML (si utilizas Spring Boot, este lo hace automaticamente al crear el proyecto):
+    
+
+```xml
+...
+	<context:component-scan base-package="your.base.package"></context:component-scan>
+...
+```
+
+Esta etiqueta hará un autoescaneo. Asumiendo que cada clase que tiene que convertirse en un bean está anotada con una anotación correcta como `@Component` (para un bean simple) o `@Controller` (para un control de servlet) o `@Repository` (para clases DAO) y estas clases están en algún lugar bajo el paquete io.yotsuya.movies, Spring encontrará todas ellas y creará un Bean para cada una. Esto se hace en 2 escaneos de las clases - la primera vez sólo busca las clases que necesitan convertirse en un bean y mapea las inyecciones que necesita hacer, y en el segundo escaneo inyecta los beans. Por supuesto, puedes definir tus beans en el archivo XML más tradicional o con una clase @Configuration (o cualquier combinación de las tres).
+
+
+### @Configuration
+
+Esta anotación se usa en clases que definen beans**. @Configuration** es un análogo para un archivo de configuración XML: se configura mediante clases Java. Una clase Java anotada con **`@Configuration`** es una configuración en sí misma y tendrá métodos para crear instancias y configurar las dependencias.
+
+Aquí hay un ejemplo:
+
+```java
+@Configuartion
+public class DataConfig {
+    @Bean
+    public DataSource source() {
+        DataSource source = new OracleDataSource();
+        source.setURL();
+        source.setUser();
+        return source;
+    }
+    @Bean
+    public PlatformTransactionManager manager() {
+        PlatformTransactionManager manager = new BasicDataSourceTransactionManager();
+        manager.setDataSource(source());
+        return manager;
+    }
+}
+```
+
+
+### @Bean
+
+Esta anotación se utiliza a nivel de método. La anotación `@Bean` funciona con `@Configuration` para crear beans Spring. Como se mencionó anteriormente, `@Configuration` tendrá métodos para crear instancias y configurar dependencias. Dichos métodos serán anotados con **`@Bean`**. El método anotado con esta anotación funciona como la ID del bean, y crea y devuelve el bean real.
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public Person person() {
+        return new Person(address());
+    }
+    @Bean
+    public Address address() {
+        return new Address();
+    }
+}
+```
+
+
+### @Autowired
+
+Spring `@Autowired` es una de las anotaciones más habituales cuando trabajamos con Spring Framework ya que se trata de la anotación que permite inyectar unas dependencias con otras dentro de Spring .
+
+La anotación `@Autowired` le permite omitir las configuraciones de lo que debe inyectar y simplemente lo hace por ti.
+
+La anotación `@Autowired` indica a Spring dónde debe producirse una inyección. Si la pones en un método setMovieFinder entiende (por el prefijo set + la anotación `@Autowired`) que hay que inyectar un bean. En el segundo escaneo, Spring busca un bean de tipo MovieFinder, y si lo encuentra, lo inyecta en este método. 
+
+```java
+class Blue implements Color {
+   // Class code here
+}
+
+@Autowired
+private Color blueColor;
+```
+
+
+### @Qualifier
+
+Si el `@Autowired` encuentra dos beans de este tipo, se producirá una excepción. Para evitar la excepción, puedes utilizar la anotación `@Qualifier` y decirle cuál de los dos beans debe inyectar de la siguiente manera:
+
+```java
+@Qualifier("redBean")
+class Red implements Color {
+   // Class code here
+}
+
+@Qualifier("blueBean")
+class Blue implements Color {
+   // Class code here
+}
+```
+
+En la declaración `@Autowired`, también hay que añadir el `@Qualifier` para indicar cuál de los dos beans hay que inyectar:
+
+```java
+@Autowired
+@Qualifier("redBean")
+private Color redColor;
+```
+
+
+### @PreDestroy
+
+El codigo dentro de una función con esta anotacion siempre sera ejecutado despues de que se apague/termine el ciclo de vida, del Bean.
+
+```java
+@PreDestroy
+public void ejecutaAntesDestruccion(){
+	System.out.println("Ejecutando antes de la destrucción");
+}
+```
+
+
+### @PostConstruct
+
+El codigo dentro de una función con esta anotacion siempre sera ejecutado inmediatamente después de que inicie el Bean. Antes de cualquier otra función declarada.
+
+```java
+@PostConstruct
+public void ejecutaDespuesIniciarCiclo(){
+	System.out.println("Ejecutando inmediatamente después de iniciar el programa");
+}
+```
+
+Aún hay muchas *Annotations* por explicar, pero estas son las más utilizadas a la hora de realizar un proyecto con Spring Framework.
+
+Espero les sea de ayuda este artículo 🙂.
