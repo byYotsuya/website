@@ -18,9 +18,7 @@ export default function Layout({children, metadata={}, type="list"}) {
         '100%', // 30em-48em
         '69%', // 62em+
       ]}
-    >
-
-      
+    >      
 
       <Box
         as="article"

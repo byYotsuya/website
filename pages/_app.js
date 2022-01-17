@@ -5,7 +5,7 @@ import theme, { ThemeProvider } from "../styles/theme";
 
 function MyApp({ Component, pageProps }) {
   return <ThemeProvider>    
-    <Component {...pageProps} />
+    <Component style={{maxWidth:'1600px', margin: '0 auto'}} {...pageProps} />
   </ThemeProvider>
 }
 

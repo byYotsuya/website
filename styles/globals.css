@@ -35,6 +35,9 @@ h1 span {
   animation-delay: calc(0.1s * var(--i));
 }
 
+h3 {
+  font-size: 30px;
+}
 
 @keyframes animate {
   0% {
@@ -64,4 +67,35 @@ h1 span {
     filter: blur(2px) hue-rotate(0deg);
     box-shadow: none;
   }
+}
+
+
+/*
+Scrollbar
+**/
+
+pre::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+pre::-webkit-scrollbar:vertical {
+  width:10px;
+}
+
+pre::-webkit-scrollbar-button:increment,pre::-webkit-scrollbar-button {
+  display: none;
+} 
+
+pre::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: #005091;
+  border-radius: 20px;
+  border: 2px solid #001b96;
+}
+
+pre::-webkit-scrollbar-track {
+  border-radius: 10px;  
 }
