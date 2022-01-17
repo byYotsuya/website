@@ -8,7 +8,12 @@ export default function TitleHeader() {
 
   return (
     <Container>
-      <Text fontSize="4xl" fontFamily="Imperial Script" letterSpacing={5} color="#000" fontWeight="bold">
+      <Text 
+        fontSize={["xl", "2xl", "3xl", "3xl"]}
+        fontFamily="Imperial Script"
+        letterSpacing={[3, 3, 5, 5]}
+        color="#000"
+        fontWeight="bold">
         <strong>Miguel Martinez</strong>
       </Text>
     </Container>

@@ -10,7 +10,7 @@ export default function Layout({children, metadata={}, type="list"}) {
     <Box
       height="100%"
       background="#fff"
-      padding="10"
+      padding={["2", "3", "5", "7"]}
       rounded="10"
       width={[
         '100%', // 48em-62em
@@ -41,7 +41,7 @@ export default function Layout({children, metadata={}, type="list"}) {
             </Heading>
           )
         }
-        <section style={{marginTop: "3rem"}} >{children}</section>
+        <section style={{marginTop: "2rem"}} >{children}</section>
 
       </Box>
       

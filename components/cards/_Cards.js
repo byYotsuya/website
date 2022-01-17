@@ -33,7 +33,7 @@ export const Card = ({
       height="100%"
       color="#fbd065"
       borderRadius={["none", "lg"]}
-      p={[4, 4, 8, 16]}>
+      p={[4, 4, 6, 8]}>
       {children}
       <CardContent />
     </Box>

@@ -10,7 +10,7 @@ export default function SearchButton() {
 
     <form>
       <Box
-        display="flex"
+        display={["none", "none", "flex", "flex"]}
         justifyContent="center"
         alignItems="center"
       >

@@ -12,9 +12,16 @@ export default function Header({background = "#f1f5f9"}) {
 
     <Container maxWidth="100%" background={background}>
 
-      <Container maxW="container.2xl" paddingX="5rem" paddingY="5">
+      <Container 
+        maxW="container.2xl"
+        paddingX={["2rem", "2rem", "4rem", "4rem"]}
+        paddingY="5">
         <header>
-          <Flex height="40px" alignItems="center" justifyContent="center">
+          <Flex 
+            height="40px"
+            flexDirection={["column", "column", "row", "row"]}
+            alignItems="center"
+            justifyContent="center">
             <Box alignItems="flex-start" alignContent="flex-start" >
               <Link href="/">
                 <a>
@@ -28,7 +35,10 @@ export default function Header({background = "#f1f5f9"}) {
             <Box mx={5}>
               <Link href="/p/about-me">
                 <a>
-                  <Text fontSize="xl" fontWeight="bold" fontFamily="Poppins">
+                  <Text 
+                    fontSize={["md", "md", "lg", "xl"]}
+                    fontWeight="bold"
+                    fontFamily="Poppins">
                     Sobre mí
                   </Text>
                 </a>
