@@ -20,10 +20,14 @@ export default function SearchButton() {
             // eslint-disable-next-line react/no-children-prop
           >
             <SearchIcon 
-              height="100%" color="#900099" />
+              marginTop={["0", "0", "-0.5rem", "0rem"]}
+              height="100%"
+              color="#900099" />
           </InputLeftElement>
           <Input
             size="md"
+            width={["0", "0", "200px", "100%"]}
+            height={["30px", "30px", "30px", "40px"]}
             type="text"
             color="#000"
             borderColor="#900099"
