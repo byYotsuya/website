@@ -1,60 +1,51 @@
-import { Box, Container, Flex, Spacer } from '@chakra-ui/layout'
-import { Center, Text } from '@chakra-ui/react'
 import Link from 'next/link'
-import React from 'react'
+import { useRouter } from 'next/router'
+import { IconArrowLeft } from './icons'
 import SearchButton from './partials/SearchButton'
 import TitleHeader from './partials/TitleHeader'
 
-      
-export default function Header({background = "#f1f5f9"}) {
+
+export default function Header({ background = "#38bdf8" }) {
+  const { pathname } = useRouter()
+
 
   return (
 
-    <Container maxWidth="100%" background={background}>
+    <div className={`bg-[${background}] max-w-full bg-slate-900 `}>
+      {
+        pathname !== '/' && <Link href='/' >
+          <IconArrowLeft className='h-5 w-5 mx-2 cursor-pointer fixed top-8 left-5' />
+        </Link>
+      }
 
-      <Container 
-        maxW="container.2xl"
-        paddingX={["2rem", "2rem", "4rem", "4rem"]}
-        paddingY="5">
-        <header>
-          <Flex 
-            height="40px"
-            flexDirection={["column", "column", "row", "row"]}
-            alignItems="center"
-            justifyContent="center">
-            <Box alignItems="flex-start" alignContent="flex-start" >
-              <Link href="/">
-                <a>
-                  <TitleHeader />
-                </a>
-              </Link>
-            </Box>
+      <div className='flex max-w-6xl px-2 md:px-4 lg:px-4 py-2 h-20 mx-auto items-center '>
+        <header className='flex h-10 w-full flex-col md:flex-row items-center justify-between'>
 
-            <Spacer />
+          <div className='items-start content-start'>
+            <Link href="/">
+              <a>
+                <TitleHeader />
+              </a>
+            </Link>
+          </div>
 
-            <Box mx={5}>
+          <div className='flex'>
+            <div className='mx-5'>
               <Link href="/p/about-me">
                 <a>
-                  <Text 
-                    fontSize={["md", "md", "lg", "xl"]}
-                    fontWeight="bold"
-                    fontFamily="Poppins">
+                  <p className='text-yellow-500 font-bold text-base md:text-lg xl:text-xl'>
                     Sobre mí
-                  </Text>
+                  </p>
                 </a>
               </Link>
-            </Box>
+            </div>
+            <div >
+              <SearchButton />
+            </div>
+          </div>
 
-            <Box>
-              <Center >
-                <SearchButton />
-              </Center>
-            </Box>
-
-
-          </Flex>
         </header>
-      </Container>
-    </Container>
+      </div>
+    </div>
   )
 }

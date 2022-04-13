@@ -1,7 +1,7 @@
 import NextLink from "next/link";
 
 import { Link } from "./elements";
-import { ExternalLinkIcon } from "./icons";
+import { IconExternalLink } from "./icons";
 
 export const CustomLink = (props) => {
   const href = props.href;
@@ -23,7 +23,7 @@ export const CustomLink = (props) => {
       rel="noopener noreferrer"
       {...props}
     >
-      {props.children} {typeof props.children !== "object" && <ExternalLinkIcon mx="2px" />}
+      {props.children} {typeof props.children !== "object" && <IconExternalLink  mx="2px" />}
     </Link>
   );
 };

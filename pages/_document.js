@@ -11,7 +11,7 @@ class MyDocument extends Document {
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Imperial+Script&family=Poppins&display=swap" rel="stylesheet" />
         </Head>
-        <body>
+        <body style={{height: '100vh'}}>
           <Main />
           <NextScript />
         </body>

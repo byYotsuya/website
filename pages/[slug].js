@@ -1,4 +1,3 @@
-import { Container, Flex } from '@chakra-ui/react';
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
 import React from 'react'
@@ -10,8 +9,8 @@ import { getFileBySlug, getFiles } from '../lib/md'
 
 
 
-export default function blog({source, frontmatter}) {
-  
+export default function blog({ source, frontmatter }) {
+
   return (
     <>
 
@@ -21,20 +20,17 @@ export default function blog({source, frontmatter}) {
 
       <Header background="#f1f5f9" />
 
-      <Container maxW="container.2xl" paddingX={[5,10,10,10]} marginTop="10" height="auto">
-          <Flex 
-            fontSize="xl"
-            direction={["column", "column", "column", "row"]}
-            justify="space-between">
-            
-            <Layout metadata={frontmatter}>
-              <MDXRemote {...source} components={MDXComponents}/>
-              
-            </Layout>
+      <div className='max-w-2xl px-5 md:px-10 mt-2 h-auto'>
+        <div className='text-xl flex-col md:flex-row items-center justify-between'>
 
-            <AboutCard />
-          </Flex>
-        </Container>
+          <Layout metadata={frontmatter}>
+            <MDXRemote {...source} components={MDXComponents} />
+
+          </Layout>
+
+          <AboutCard />
+        </div>
+      </div>
     </>
   )
 }

@@ -1,27 +1,26 @@
 import React from 'react'
-import { Box, Flex, Heading, Tag, Text } from '@chakra-ui/react'
 import { IconCalendar } from '../icons'
 
-export default function PostListItem({title, date, tags=[]}) {
+export default function PostListItem({ title, date, tags = [] }) {
   return (
-    <Box mt={5} className='title'>
-      <Heading as="h3" size="md" fontFamily="Poppins">
+    <div className='title mt-5'>
+      <h3 style={{ fontFamily: "Poppins" }}>
         {title}
-      </Heading>
-      <Flex align="center" mt={1} ml={2} fontSize="md" color="#5597da">
+      </h3>
+      <div className='flex flex-row items-center mt-1 ml-2 text-base text-blue-400'>
         <IconCalendar />
-        <Text>
+        <p>
           {date} {" "}
           {
             tags?.map((tag, index) => (
-              <Tag key={tag} mx={2} variant='solid' colorScheme='teal'>
+              <span key={tag} className='items-center flex-row text-sm mx-2 bg-teal-700 rounded-md p-1 text-white'>
                 {tag}
-              </Tag>
+              </span>
             ))
           }
-        </Text>
-      </Flex>
-    </Box>
+        </p>
+      </div>
+    </div>
   )
 }
 

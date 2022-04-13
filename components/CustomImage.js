@@ -1,9 +1,9 @@
-import { Box, Image } from "./elements";
+import Image from 'next/image';
 
 export const CustomImage = (props) => {
   return (
-    <Box boxShadow="md" borderWidth="1px" p="6" rounded="md" bg="white">
+    <div className="shadow-lg border-1 border-red-500 p-6 rounded-md bg-white">
       <Image {...props} alt={props.src} />
-    </Box>
+    </div>
   );
 };

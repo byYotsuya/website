@@ -1,4 +1,3 @@
-export { ExternalLinkIcon } from "@chakra-ui/icons";
 
 export { SiTiktok as IconTiktok } from "react-icons/si";
 
@@ -10,6 +9,9 @@ export {
   FaLinkedinIn as IconLinkedin,
   FaStar as IconStar,
   FaRegStar as IconStarEmpty,
+  FaExternalLinkAlt as IconExternalLink,
+  FaSearch as IconSearch,
+  FaArrowLeft as IconArrowLeft,
 } from "react-icons/fa";
 
 export {

@@ -1,4 +1,4 @@
-export {
+/* export {
   Box,
   Flex,
   Spacer,
@@ -37,4 +37,4 @@ export {
   AccordionPanel,
   AccordionIcon,
   Img,
-} from "@chakra-ui/react";
+} from "@chakra-ui/react"; */

@@ -1,51 +1,32 @@
-import { Box, Heading } from '@chakra-ui/layout'
-import React from 'react'
 
-export default function Layout({children, metadata={}, type="list"}) {
+export default function Layout({ children, metadata = {}, type = "list" }) {
 
   const isBlogTemplate = type == "list" && metadata.date
 
 
   return (
-    <Box
-      height="100%"
-      background="#fff"
-      padding={["2", "3", "5", "7"]}
-      rounded="10"
-      width={[
-        '100%', // 48em-62em
-        '100%', // 30em-48em
-        '100%', // 30em-48em
-        '69%', // 62em+
-      ]}
-    >      
+    <div className='h-full p-2 md:p-3 lg:p-5 xl:p-7 rounded-sm w-full lg:max-w-2xl'>
 
-      <Box
-        as="article"
-        mx={[0, 0, 0, 0, 4]}
-        my={4}
-        borderRadius="lg"
-        width={["100%", "100%", "100%", "100%"]}
-      >
+      <div className='mx-0 lg:mx-4 my-4 rounded-lg w-full'>
 
         {
           isBlogTemplate
-          ? (
-            <Heading as="h1" m={2} size="xl">
-              {metadata.title}
-            </Heading>
-          )
-          : (
-            <Heading as="h2" size="xl" fontWeight="bold" >
-              <strong>{metadata.title}</strong>
-            </Heading>
-          )
+            ? (
+              <h1 className='text-4xl m-2 dark:text-gray-400 '>
+                {metadata.title}
+              </h1>
+            )
+            : (
+              <h2 className='text-4xl font-bold dark:text-gray-400'>
+                <strong>{metadata.title}</strong>
+              </h2>
+            )
         }
-        <section style={{marginTop: "2rem"}} >{children}</section>
+        <section style={{ marginTop: "2rem" }} >{children}</section>
 
-      </Box>
-      
-      
-    </Box>
+      </div>
+
+
+    </div>
   )
 }

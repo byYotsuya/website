@@ -1,5 +1,4 @@
 import NextLink from 'next/link';
-import { Text } from '@chakra-ui/react'
 import { Card } from './_Cards';
 import Link from 'next/link';
 
@@ -7,18 +6,18 @@ import Link from 'next/link';
 export default function AboutCard() {
   return (
     <Card type="aside" headerTitle="About" bgColor="#202225" >
-      <Text py="2" color="#eee">
+      <p className='py-2 text-gray-300'>
         ¡Hola! Soy Miguel Martínez. Llevo desarrollando web desde hace{" "}
         {new Date().getFullYear() - 2019} años.
-      </Text>
-      <Text py="2" color="#eee">
+      </p>
+      <p className='py-2 text-gray-300'>
         He trabajado en varias proyectos como API&apos;s Market, Gestion de Inventarios y E-commerce.
-      </Text>
+      </p>
       <Link href="/p/about-me">
         <a py={4} >
-          <Text fontWeight="bold" color="#eee">
+          <p className='font-bold text-gray-300'>
             Más sobre mi →
-          </Text>
+          </p>
         </a>
       </Link>
     </Card>

@@ -1,45 +1,18 @@
-import { SearchIcon } from '@chakra-ui/icons'
-import { InputGroup, InputLeftElement } from '@chakra-ui/input'
-import { Box } from '@chakra-ui/layout'
-import { Input } from '@chakra-ui/react'
-import React from 'react'
+import { IconSearch } from '../icons'
 
 export default function SearchButton() {
   return (
-
-
     <form>
-      <Box
-        display={["none", "none", "flex", "flex"]}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <InputGroup>
-          <InputLeftElement 
-            pointerEvents="none"
-            // eslint-disable-next-line react/no-children-prop
-          >
-            <SearchIcon 
-              marginTop={["0", "0", "-0.5rem", "0rem"]}
-              height="100%"
-              color="#900099" />
-          </InputLeftElement>
-          <Input
-            size="md"
-            width={["0", "0", "200px", "100%"]}
-            height={["30px", "30px", "30px", "40px"]}
-            type="text"
-            color="#000"
-            borderColor="#900099"
-            background="#fff"
-            rounded="20px"
-            placeholder="Search" />
-        </InputGroup>
-        
-
-          
+      <div className='hidden md:flex justify-center items-center'>
       
-      </Box>
+        <IconSearch 
+          className='mt-0 -mr-6 lg:-mt-1 xl:mt-0 h-full text-blue-800'
+          />
+        <input
+          className='w-0 md:w-48 lg:w-full h-7 xl:h-10 text-white border-blue-800 bg-transparent rounded-full border-[3px] pl-7 pr-2 py-3'
+          placeholder="Search" />
+              
+      </div>
     </form>
 
   )
